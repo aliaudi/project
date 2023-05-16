@@ -1,0 +1,108 @@
+{% extends 'dashboard.html'%}
+{% block content%}
+<style>
+    .tb1-container{
+        width:1200px ;
+        height:600px;
+       
+    }
+    .tb1-fixed{
+        overflow-x: scroll;
+        overflow-y: scroll;
+      
+        max-width:1100px ;
+        max-height:500px ;
+       
+    }
+</style>
+<title>Document</title>
+</head>
+
+
+<body>
+
+
+<div class="container">
+<div class="row"><a href="{% url 'main:addproduct' %}" class="btn btn-danger">إضافة دواء</a></div>
+<div class="row">
+{% comment %} <form method="POST">
+{% csrf_token %}
+<a href="{% url 'main:showproduct'%}" class="btn btn-danger">عرض محتويات المستودع</a>
+     <button class="btn btn-danger">مستودع</button>  {% endcomment %}
+
+
+</form></div>
+</div>
+
+<div class="container m-5 tb1-container">
+<div class="row tb1-fixed">
+
+<table class="table">
+<thead class="thead-warning">
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">اسم المنتج</th>
+    <th scope="col">الفئة</th>
+    <th scope="col">الوصف</th>
+    <th>الوحدة الكبيرة</th>
+    <th>عدد الوحدات الكبيرة</th>
+      <th>تكلغة الوحدة الكبيرة</th>
+      <th>سعر الوحدة الكبيرة</th>
+      <th>عدد الوحدات المتوسطة داخل الوحدة الكبيرة</th>
+      <th>الوحدة المتوسطة</th>
+      <th>عدد الوحدات المتوسطة</th>
+      <th>تكلغة الوحدة المتوسطة</th>
+      <th>سعر الوحدة المتوسطة</th>
+      <th>عدد الوحدات الصغيرة داخل الوحدة المتوسطة</th>
+      <th>الوحدة الصغيرة</th>
+      <th>عدد الوحدات الصغيرة</th>
+      <th>تكلغة الوحدة الصغيرة</th>
+    <th>سعر الوحدة الصغيرة</th> 
+    <th>تاريخ  الإدخال</th> 
+    <th>تاريخ انتهاء الصلاحية</th> 
+    <th>العملة</th> 
+    <th></th> 
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+ {% for product in products %}
+    <td>{{product.product_id}}</td>
+    <td>{{product.product_name}}</td>
+    <td>{{product.category}}</td>
+    <td>{{product.desc}}</td>
+    <td>{{product.unit_big}}</td>
+    <td>{{product.num_of_big_unit}}</td>
+    <td>{{product.cost_of_big}}</td>
+    <td>{{product.price_of_big}}</td>
+    <td>{{product.num_of_big_medium}}</td>
+    <td>{{product.unit_medium}}</td>
+    <td>{{product.num_of_medium_unit}}</td>
+    <td>{{product.cost_of_medium}}</td>
+    <td>{{product.price_of_medium}}</td>
+    <td>{{product.num_of_medium_small}}</td>
+    <td>{{product.unit_small}}</td>
+    <td>{{product.num_of_small_unit}}</td>
+  <td>{{product.cost_of_small}}</td>
+  <td>{{product.price_of_small}}</td>
+
+    <td>{{product.date_of_entering}}</td>
+    <td>{{product.date_of_ending}}</td>
+    <td>{{product.currency}}</td>
+    <th><a class="btn btn-success">تعديل</a></th> 
+    <th>
+     
+      <a class="btn btn-danger" href="{% url 'main:deleteproduct' product.product_id %}">حذف</a>
+   
+    </th>   
+  </tr>
+ {% endfor %}
+</tbody>
+</table>
+
+
+</div>
+</div>
+
+{% endblock content%}

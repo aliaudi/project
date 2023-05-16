@@ -1,0 +1,43 @@
+{% extends 'dashboard.html'%}
+{% load static %}
+{%block content%}
+
+<div class="container">
+<div class="row">
+
+
+
+    <div class="col-lg-6">
+        <div class="border bg-white p-3">
+
+
+            <h3>delete item</h3>
+            <hr>
+            <div class="alert aler-danger">
+                <h4>هل أنت متأكد أنك تريد حذف العنصر</h4>
+            </div>
+            <form action="" method='POST'>
+                {% csrf_token%}
+
+                <input type="submit" class="btn btn-danger" value="تأكيد">
+
+                
+
+                <a href="{% url 'main:showproduct'%}">عودة</a>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+{% endblock content %}

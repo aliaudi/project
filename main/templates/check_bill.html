@@ -1,0 +1,28 @@
+{% extends 'dashboard.html'%}
+{% block content%}
+<div class="container" style="margin-top: 5%; margin-left:35%;">
+    <form action="" method="POST">
+    <div class="row">
+       {% csrf_token %}
+        <input type="text" name="name_of_customer">
+        <h2 class="m-3 text-danger">اسم المشتري</h2>
+    </div>
+    <div class="row">
+        <button class="btn-success m-3" style="width: 200px;" >بحث</button>
+    </div>
+</form>
+</div>
+<div class="container">
+
+    {% for product in t %}
+<div class="row m-2">
+    <a class="btn btn-success m-2" href="{% url 'main:showbill' product %}">{{product}}</a>
+    <a class="btn btn-danger m-2" href="{% url 'main:delete_product_byname' product %}">حذف</a>
+    <a class="btn btn-success m-2" href="{% url 'main:updatebill' product %}">تعديل</a>
+</div>
+    {% endfor %}
+
+
+
+
+{% endblock content%}

@@ -1,0 +1,16 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+<div class="container" style="margin-left: 35%; margin-top: 10%;">
+
+    <div class="row m-4">
+        <a href="{% url 'main:expenses' %}" class="btn btn-success" style="width:300px ;"> فاتورة </a>
+    </div>
+    <div class="row m-4">
+        <a href="{% url 'main:checkexpenses' %}" class="btn btn-success" style="width:300px ;">مراجعة الفواتير </a>
+    </div>
+</div>
+
+
+{% endblock content %}

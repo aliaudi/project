@@ -1,0 +1,51 @@
+{% extends 'dashboard.html' %}
+
+
+{% block content %} 
+
+
+<div class="container" style="margin-right: 20%; margin-top: 5%;">
+    <form action="" method="POST">
+      {% csrf_token %} 
+    <div class="row">
+
+        <input type="text" name="numbill" id="numbill">
+        <h2>رقم الفاتورة</h2>
+    </div>
+        <div class="row">
+            <button class="btn-success" style="width: 150px;">عرض</button>
+        </div>
+    </form>
+</div>
+
+<div class="container m-5 tb1-container">
+    <div class="row tb1-fixed">
+    
+    <table class="table">
+    <thead class="thead-warning">
+        <tr>
+          <th>رقم الفاتورة</th>
+          <th>نوع الفاتورة</th>
+          <th>المبلغ</th>
+          <th>التاريخ</th>
+          <th>التوقيت</th>
+          <th></th>
+        </tr>
+        <tbody>
+            <tr>
+                {% for x in item %}
+
+                <td>{{x.num_bill}}</td>
+                <td>{{x.typebill}}</td>
+                <td>{{x.money}}</td>
+                <td>{{x.date}}</td>
+                <td>{{x.time}}</td>
+                <td><a href="{% url 'main:deleteexpense' x.num_bill  %}" class="btn btn-danger">حذف</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+       </table>
+    </div>
+</div>
+
+{% endblock content %}

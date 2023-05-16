@@ -1,0 +1,35 @@
+{% extends 'dashboard.html' %}
+
+{% block content%}
+
+<div class="container "   style="margin-top: 10%; margin-left: 30%; width:50% ; height:500px ;">
+    <div class="row m-3 m-2 ">
+      <div class="col-lg-12">
+      <div class="row m-3 m-2 ">
+      <a href="{% url 'main:showsalesday' %}" class="btn btn-success p-2 " style="width:300px; margin-left:70px;">عرض المبيعات في يوم محدد</a>
+  </div>
+  
+   <div class="row m-3 m-2">
+  
+   
+      <a href="{% url 'main:showsalesmonth' %}" class="btn btn-success p-2 " style="width:300px; margin-left:70px;">عرض المبيعات في شهر محدد</a>
+   
+      <!-- <button class="btn btn-success">عرض محتويات المستودع</button> -->
+      </div>
+    
+     <div class="row m-3 m-2">
+    <a href="{% url 'main:showsalesyear' %}" class="btn btn-success p-2 " style="width:300px; margin-left:70px;">عرض المبيعات في سنة محددة</a>
+     </div>
+    
+  </div>
+  </div>
+  </div>
+  
+  
+  </div>
+
+
+
+
+
+{% endblock content%}

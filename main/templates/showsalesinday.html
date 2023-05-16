@@ -1,0 +1,54 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+
+<div class="container">
+    <form method="POST">
+       {% csrf_token %}
+    <div class="row">
+        <input type="date" name="date" id="date">
+    </div>
+    <div class="row">
+        <button>عرض</button>
+    </div>
+</form>
+</div>
+
+
+<div class="container m-5 tb1-container">
+    <div class="row tb1-fixed">
+    
+    <table class="table">
+    <thead class="thead-warning">
+        <tr>
+            <th>اسم المنتج</th>
+            <th>الوحدة</th>
+            <th>سعر الوحدة</th>
+          <th>عدد الوحدات</th>
+        
+      <th>المبلغ الكلي</th>
+        </tr>
+        <tbody>
+            <tr>
+                {% for x in item %}
+
+                <td>{{x.name_of_product}}</td>
+                <td>{{x.unit_of_product}}</td>
+                <td>{{x.price_of_unit}}</td>
+                <td>{{x.num_of_units}}</td>
+                <td>{{x.price_all}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+       </table>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h2 class="m-2">قيمة الميعات</h2>
+
+            <h2 class="m-2">{{x}}</h2>
+    </div>
+
+
+</div>
+{% endblock content %}

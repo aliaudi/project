@@ -1,0 +1,71 @@
+{% extends 'dashboard.html' %}
+
+
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+{% block content %}
+    <title>Document</title>
+
+
+
+
+
+
+    <title>Document</title>
+</head>
+
+
+<body>
+
+
+<div class="container "   style="margin-top: 10%; margin-left: 30%; width:50% ; height:500px ;">
+  <div class="row m-3 m-2 ">
+    <div class="col-lg-12">
+    <div class="row m-3 m-2 ">
+    <a href="{% url 'main:addproduct' %}" class="btn btn-success p-2 " style="width:300px; margin-left:70px;">إضافة دواء</a>
+</div>
+
+ <div class="row m-3 m-2">
+
+    <form method="POST">
+    {% csrf_token %}
+    <a href="{% url 'main:showproduct'%}" class="btn btn-success p-2 " style="width:300px; margin-left:70px;">عرض محتويات المستودع</a>
+  </form>
+    <!-- <button class="btn btn-success">عرض محتويات المستودع</button> -->
+    </div>
+  
+   <div class="row m-3 m-2">
+  <a href="{% url 'main:gill' %}" class="btn btn-success p-2 " style="width:300px; margin-left:70px;">قاتورة</a>
+   </div>
+   <div class="row m-3 m-2">
+  <a href="{% url 'main:sales' %}" class="btn btn-success p-2 " style="width:300px; margin-left:70px;">المبيعات</a>
+   </div>
+   <div class="row m-3 m-2">
+  <a href="{% url 'main:box' %}" class="btn btn-success p-2 " style="width:300px; margin-left:70px;">الصندوق</a>
+   </div>
+   <div class="row m-3 m-2">
+  <a href="{% url 'main:check_bill_general' %}" class="btn btn-success p-2 " style="width:300px; margin-left:70px;">مراجعة الفواتير</a>
+   </div>
+   <div class="row m-3 m-2">
+  <a href="{% url 'main:expensesg' %}" class="btn btn-success p-2 " style="width:300px; margin-left:70px;">أمر صرف</a>
+   </div>
+</div>
+</div>
+</div>
+
+
+</div>
+{% endblock content %}
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'js/lain.js' %}"></script>
+</body>
+  </html>

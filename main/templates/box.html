@@ -1,0 +1,20 @@
+{% extends 'dashboard.html' %} 
+
+
+{% block content %} 
+
+    <div class="container" style="margin-top: 10%; margin-left: 40%;">
+
+        <div class="row m-3" >
+          <a href="{% url 'main:boxday' %}" class="btn btn-success" style="width:250px ;">حركة الصندوق في يوم محدد</a>
+        </div>
+        <div class="row m-3" >
+            <a href="{% url 'main:boxmonth' %}" class="btn btn-success" style="width:250px ;">حركة الصندوق في شهر محدد</a>
+        </div>
+        <div class="row m-3" >
+            <a href="{% url 'main:boxnow' %}" class="btn btn-success" style="width:250px ;">المال في الصندوق</a>
+        </div>
+    </div>
+
+
+{% endblock content %}

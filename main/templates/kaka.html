@@ -1,0 +1,104 @@
+{% extends 'dashboard.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%block content%}
+
+   
+    <form method="POST">
+       {% csrf_token %}
+     
+       <div class="row m-2"> <input type="text" name="numbill">
+        <h2>رقم الغاتورة</h2></div>
+       
+        <div class="row m-2"> <input type="text" name="name_of_customer">
+            <h2>اسم المشتري</h2></div>
+        <div class="row m-2"> <input type="number" id="allvalue_of_bill" name="allvalue_of_bill">
+            <h2>قيمة الفاتورة الكلية</h2></div>
+        <div class="row m-2"> <input type="number" id="allvalue_of_bill_after_tax" name="allvalue_of_bill_after_tax">
+            <h2>قيمة الفاتورة بعد الضرائب</h2></div>
+        <div class="row m-2"> <input type="text" name="taken_money">
+            <h2>المال المقبوض</h2></div>
+        <div class="row m-2"> <input type="text" name="will_taken_money">
+            <h2>المال المتبقي</h2></div>
+          <div class="row">
+            <input type="date" id="date" name="date">
+         <h2>تاريخ دفع المال المتبقي</h2>
+          </div>
+         <div class="row m-2">
+            <input type="text" name="cause">
+            <h2>السبب</h2>
+
+         </div>  
+         <div class="row m-2">
+            <input type="text" name="curency">
+            <h2>العملة/</h2>
+
+         </div> 
+
+         <table class="table">
+            <thead class="thead-warning">
+              <tr>
+             
+
+                <th scope="col">اسم الدواء</th>
+                <th scope="col">الوحدة</th>
+                <th scope="col">سعر الوحدة</th>
+                <th scope="col">العدد</th>
+                <th>المبلغ </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+          
+            <td><input type="text" id="name1" name="name1"></td>
+            <td><input type="text" id="unit1" name="unit1"></td>
+            <td><input type="number" id="price_unit1" name="price_unit1"></td>
+            <td><input type="number" id="number_unit1" name="number_unit1"></td>
+            <td><input type="number" id="allmoney1" name="allmoney1"></td>
+          
+          </tr>
+          <tr>
+          
+            <td><input type="text" id="name2" name="name2"></td>
+            <td><input type="text" id="unit2" name="unit2"></td>
+            <td><input type="number" id="price_unit2" name="price_unit2"></td>
+            <td><input type="number" id="number_unit2" name="number_unit2"></td>
+            <td><input type="number" id="allmoney2" name="allmoney2"></td>
+          
+          </tr>
+          <tr>
+          
+            <td><input type="text" id="name3" name="name3"></td>
+            <td><input type="text" id="unit3" name="unit3"></td>
+            <td><input type="number" id="price_unit3" name="price_unit3"></td>
+            <td><input type="number" id="number_unit3" name="number_unit3"></td>
+            <td><input type="number" id="allmoney3" name="allmoney3"></td>
+          
+          </tr>
+          <tr>
+          
+            <td><input type="text" id="name4" name="name4"></td>
+            <td><input type="text" id="unit4" name="unit4"></td>
+            <td><input type="number" id="price_unit4" name="price_unit4"></td>
+            <td><input type="number" id="number_unit4" name="number_unit4"></td>
+            <td><input type="number" id="allmoney4" name="allmoney4"></td>
+          
+          </tr>
+        </tbody>
+    </table>
+         <button>submit</button>
+    </form>
+
+    <script src="{% static 'js/fefe.js' %}"></script>
+   {% endblock content %} 
+</body>
+</html>

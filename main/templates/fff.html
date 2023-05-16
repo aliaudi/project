@@ -1,0 +1,36 @@
+<style>
+    .tb1-container{
+        width:1200px ;
+        height:600px;
+       
+    }
+    .tb1-fixed{
+        overflow-x: scroll;
+        overflow-y: scroll;
+      
+        max-width:1100px ;
+        max-height:500px ;
+       
+    }  
+</style>
+<title>Document</title>
+</head>
+<body>
+
+<div class="container" style="margin-top: 5%; margin-left:35%;">
+    <form action="" method="POST">
+    <div class="row">
+       {% csrf_token %}
+        <input type="text" name="name_of_customer">
+        <h2 class="m-3 text-danger">اسم المشتري</h2>
+    </div>
+    <div class="row">
+        <button class="btn-success m-3" style="width: 200px;" >بحث</button>
+    </div>
+</form>
+</div>
+<div class="container">
+
+{% for product in t %}
+<a class="btn btn-danger" href="{% url 'main:showbill' product %}">{{product}}</a>
+{% endfor %}

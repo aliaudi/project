@@ -1,0 +1,34 @@
+{% extends 'dashboard.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/ex.css' %}">
+    <title>Document</title>
+</head>
+<body>
+  
+    {%load static%}
+    {% load crispy_forms_tags %}
+    <div class="container">
+    
+        <div class="row">
+            <form method="POST" class="form-groub">
+                {% csrf_token %}
+                {{form.as_p}}
+    
+                <button class="btn btn-danger">إضافة</button>
+              
+              </form>
+        </div>
+    
+    
+    
+    </div>
+    {% endblock content %}  
+</body>
+</html>

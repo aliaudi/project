@@ -1,0 +1,162 @@
+{% extends 'dashboard.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <style>
+        .tb1-container{
+            width:1400px ;
+            height:1000px;
+           
+        }
+        .tb1-fixed{
+            overflow-x: scroll;
+            overflow-y: scroll;
+          
+            max-width:1100px ;
+            max-height:900px ;
+           
+        }
+    </style> {% endcomment %}
+    <title>Document</title>
+</head>
+<body>
+    {% block content%}
+
+    <div class="container" style="margin-top: 5%; margin-left:35%;">
+        <form action="" method="POST">
+        <div class="row">
+           {% csrf_token %}
+            <input type="text" name="name_of_customer">
+            <h2 class="m-3 text-danger">اسم المشتري</h2>
+        </div>
+        <div class="row">
+            <button class="btn-success m-3" style="width: 200px;" >بحث</button>
+        </div>
+    </form>
+    </div>
+    
+    {% comment %} <div class="container m-5 tb1-container">
+        <div class="row tb1-fixed">
+        
+        <table class="table">
+        <thead class="thead-warning">
+          <tr>
+          
+           <th>اسم الدواء</th>
+           <th>الوحدة</th>
+           <th>سعر</th>
+           <th>العدد</th>
+           <th>المبلغ</th>
+            </tr>
+            <thead>
+        
+                <tbody>
+                    {% for i in item %}
+                <tr>
+                    <td>{{i.name_of_product}}
+                    </td>
+                    <td>{{i.unit_of_product}}</td>
+        
+                    <td>{{i.price_of_unit}}</td>
+        
+                    <td>{{i.num_of_units}}</td>
+                    <td>{{i.price_all}}</td>
+        
+                </tr>
+                {% endfor %}
+            </thead>
+        </tbody>
+        </table> {% endcomment %}
+
+
+        <div class="container bg-secondary m-5">
+
+            <div class="row m-2 bg-warning">
+              
+                <div class="col-lg-4">
+                    {% for u in t %}
+                <!-- {% comment %} <h4 class="">{{u.num_bill}}</h4>
+            </div>
+                <div class="col-lg-4"> -->
+          
+                <h4>رقم القاتورة</h4>
+            </div>
+            </div>
+            <a href="">{{u}}</a>
+            <!-- <div class="row m-2">
+                <div class="col-lg-4">
+                <h4>{{u.name_of_customer}}</h4>
+            </div>
+                <div class="col-lg-4">
+                <h4>اسم المشتري</h4>
+            </div>
+            </div>
+            <div class="row m-2 bg-warning">
+                <div class="col-lg-4">
+                <h4>{{u.allvalue_of_bill}}</h4>
+            </div>
+                <div class="col-lg-4">
+                <h4>قيمة الفاتورة الكلية</h4>
+            </div>
+            </div>
+            <div class="row m-2">
+        
+                <div class="col-lg-4">
+         
+                <h4>{{u.allvalue_of_bill_after_tax}}</h4>
+            </div>
+                <div class="col-lg-4">
+                <h4>قيمة الفاتورة بعد إضافة الضريبة</h4>
+            </div>
+            </div>
+            <div class="row m-2 bg-warning">
+                <div class="col-lg-4">
+                <h4>{{u.taken_money}}</h4>
+            </div>
+                <div class="col-lg-4">
+                <h4>المبلغ المقبوض</h4>
+            </div>
+            </div>
+            <div class="row m-2">
+             
+                <div class="col-lg-4">
+              
+                <h4>{{u.will_taken_money}}</h4>
+            </div>
+                <div class="col-lg-4">
+                <h4>المبلغ المتبقي</h4>
+            </div>
+            </div>
+        <div class="row m-2 bg-warning"> 
+            <div class="col-lg-4">
+            <h4>{{u.date_of_taken_money}}</h4>
+        </div>
+            <div class="col-lg-4">
+            <h4>تاريخ السداد</h4>
+        </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-4">
+            <h4>{{u.cuurency}}</h4>
+        </div>
+            <div class="col-lg-4">
+    <h4>العملة</h4>
+        </div>
+        </div>
+        <div class="row m-2 bg-warning">
+            <div class="col-lg-4">
+            <h4>{{u.date}}</h4>
+        </div>
+            <div class="col-lg-4">
+            <h4>تاريخ الفاتورة</h4>
+        </div>
+        </div> {% endcomment %} -->
+        {% endfor %}
+        </div>
+
+    {% endblock content%}
+</body>
+</html>
